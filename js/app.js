@@ -51,7 +51,7 @@ const switchTab = (id) => {
 };
 
 const createPost = (post) => {
-  console.log()
+  console.log(post.comments[0].user)
   const image = post.image;
   const div = document.createElement("article");
   div.classList.add("post");
@@ -111,7 +111,7 @@ const createPost = (post) => {
                     </a>
 
                     <span>Liked by
-                      <a class="post__name--underline" href="#">user123</a> and
+                      <a class="post__name--underline" href="#">${post.comments[0].user}</a> and
                       <a href="#">73 others</a></span>
                   </div>
 
@@ -120,7 +120,7 @@ const createPost = (post) => {
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
-                          ${post.comments?.user}
+                          ${post.comments[0].user}
                       </a>
                       ${post.comments?.text}
                     </small>
